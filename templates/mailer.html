@@ -1,0 +1,41 @@
+<html>
+<table width="600" style="border:1px solid #333">
+  <tr>
+    <td align="center">Recent Scan Results</td>
+  </tr>
+  <tr>
+    <td align="center">
+        <table align="center" width="300" border="0" cellspacing="0" cellpadding="0" style="border:1px solid #ccc;">
+            <tr>
+                <th>Vulnerable</th>
+                <th>Scanned At</th> 
+                <th>IP Address</th>
+                <th>Device Name</th>
+                <th>Port Number</th>
+                <th>Protocol</th>
+                <th>Operating System</th>
+                <th>Architecture</th>
+            </tr>
+
+            <tbody>
+              {% for segment in toDisplay %}
+                <tr>
+                      <td>{{segment.vulnerable}}</td>
+                      <td>{{segment.timestamp}}</td>
+                      <td>{{segment.ip}}</td>
+                      <td>{{segment.device}}</td>
+
+                      <td>{{segment.port}}</td>
+                      <td>{{segment.protocol}}</td>
+                      <td>{{segment.os}}</td>
+                      <td>{{segment.arch}}</td>
+                
+                </tr>
+              {% endfor %}
+              <br><br>
+            </tbody>
+        </table>
+    </td>
+  </tr>
+</table>
+</html>
